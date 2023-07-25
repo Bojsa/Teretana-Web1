@@ -1,0 +1,35 @@
+﻿@using NebojsaVasicTeretana2022_web1.Models
+@model NebojsaVasicTeretana2022_web1.Models.FitnesCentar
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<h2>Kreiraj fitnes centar</h2>
+<p>@ViewBag.Greska</p>
+<form action="~/Fitnes/Kreiraj">
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Godina otvaranja</th>
+            <th>Adresa</th>
+            <th>Cena godisnje clanarine</th>
+            <th>Cena mesecne clanarine</th>
+            <th>Trening</th>
+            <th>Grupni trening</th>
+            <th>Personalni trening</th>
+            <th>  </th>
+        </tr>
+        <tr>
+            <td><input type="text" name="Naziv"/></td>
+            <td><input type="number" name="Godina" /></td>
+            <td><input type="text" name="Adresa" /></td>
+            <td><input type="number" name="Godisnja" /></td>
+            <td><input type="number" name="Mesecna" /></td>
+            <td><input type="number" name="Trening" /></td>
+            <td><input type="number" name="GrupniTrening" /></td>
+            <td><input type="number" name="PersonalniTrening" /></td>
+           
+        </tr>
+        <tr><td colspan="8"><input type="submit" value="Kreiraj"/></td></tr>
+    </table>
+</form>
+

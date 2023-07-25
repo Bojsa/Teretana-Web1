@@ -1,0 +1,28 @@
+﻿@model NebojsaVasicTeretana2022_web1.Models.Korisnik
+<html>
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<body>
+    <p>@ViewBag.Greska</p>
+    <form action="~/Autentifikacija/Prijavljivanje">
+        <table>
+            <tr>
+                <td>Korisnicko ime</td>
+                <td><input type="text" name="KorisnickoIme" /></td>
+            </tr>
+            <tr>
+                <td>Lozinka</td>
+                <td><input type="text" name="Lozinka" /></td>
+            </tr>
+            <tr>
+                <td align="center" width="100" colspan="2"><input type="submit" value="Prijavi se" /></td>
+            </tr>
+        </table>
+    </form>
+    <p>@ViewBag.Greska</p>
+</body>
+
+
+
+</html>

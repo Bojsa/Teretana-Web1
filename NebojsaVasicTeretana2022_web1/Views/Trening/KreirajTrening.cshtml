@@ -1,0 +1,40 @@
+﻿@using NebojsaVasicTeretana2022_web1.Models
+@model Trening
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<h2>Kreiraj trening</h2>
+@{ 
+    Korisnik k = (Korisnik)Session["kor"];
+}
+<p>@ViewBag.Greska</p>
+<form action="~/Trening/Kreiraj">
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Datum odrzavanja</th>
+            <th>Trajanje u minutama</th>
+            <th>Tip treninga</th>
+            <th>Brojno ogranicenje</th>
+        </tr>
+        <tr>
+            <td><input type="text" name="Naziv" /></td>
+            <td><input type="datetime-local" name="VremeOdrzavanja" /></td>
+            <td><input type="number" name="TrajanjeUMinutama" /></td>
+            <td>
+                <input class="datalist" list="list" name="TipTreninga" />
+                <datalist id="list">
+                    <option value="pilates"></option>
+                    <option value="kickBox"></option>
+                    <option value="interval"></option>
+                    <option value="funkcionalni"></option>
+                    <option value="aerobik"></option>
+                </datalist>
+            </td>
+            <td><input type="number" name="BrOgranicenje" /></td>
+        </tr>
+        <tr><td><input type="submit"value="Kreiraj"/></td></tr>
+    </table>
+</form>
+
+

@@ -1,0 +1,30 @@
+﻿@using NebojsaVasicTeretana2022_web1.Models
+@model List<Korisnik>
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<p>@ViewBag.Greska</p>
+<form action="~/Korisnik/Izmeni" >
+    <table>
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Email</th>
+            <th>Pol</th>
+            <th>Korisnicko ime</th>
+           
+        </tr>
+        @foreach(var k in Model)
+            {
+            <tr>
+                <td>@k.Ime</td>
+                <td>@k.Prezime</td>
+                <td>@k.Email</td>
+                <td>@k.Pol.ToString()</td>
+                <td>@k.KorisnickoIme</td>
+            </tr>
+            }
+    </table>
+</form>
+
+

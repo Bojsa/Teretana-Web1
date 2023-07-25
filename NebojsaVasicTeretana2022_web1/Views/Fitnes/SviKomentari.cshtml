@@ -1,0 +1,62 @@
+﻿@using NebojsaVasicTeretana2022_web1.Models
+@model List<Komentar>
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+
+<p>@ViewBag.Greska</p>
+<table>
+    <tr>
+        <td colspan="3">Komentari</td>
+    </tr>
+    <tr>
+        <th>Ocena</th>
+        <th>Komentar</th>
+        <th>Korisnik</th>
+        <th>Fitnes centar</th>
+        <th>Status komentara</th>
+    </tr>
+    @{ 
+        Korisnik korisnik = (Korisnik)Session["kor"];
+    }
+    @foreach (var kom in KomentarRepository.SviKomentari())
+    {
+        if (korisnik.Vlasnistvo.Contains(kom.FitnesCentar))
+        {
+<tr>
+    <td>@kom.Ocena</td>
+    <td>@kom.Tekst</td>
+    <td>@kom.Vezbac</td>
+    <td>@kom.FitnesCentar</td>
+    @if (kom.Obradjen && kom.Odobren)
+    {
+        <td>Odobren</td>
+    }
+    else if (kom.Obradjen && !kom.Odobren)
+    {
+        <td>Odbijen</td>
+    }
+    else if (!kom.Obradjen)
+    {
+        <td>Na cekanju</td>
+        <td>
+            <form action="~/Fitnes/Odobri">
+                <input hidden type="text" name="vezbac" value="@kom.Vezbac" />
+                <input hidden type="text" name="centar" value="@kom.FitnesCentar" />
+                <input type="submit" value="Odobri" />
+            </form>
+        </td>
+        <td>
+            <form action="~/Fitnes/Odbij">
+                <input hidden type="text" name="vezbac" value="@kom.Vezbac" />
+                <input hidden type="text" name="centar" value="@kom.FitnesCentar" />
+                <input type="submit" value="Odbij" />
+            </form>
+        </td>
+    }
+</tr>
+        }
+    }
+</table>
+
+

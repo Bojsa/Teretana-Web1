@@ -1,0 +1,82 @@
+﻿
+@using NebojsaVasicTeretana2022_web1.Models 
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <h1 style="color:darkblue">TERETANE BG</h1>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @{
+                    bool prijaljen;
+                    Korisnik korisnik = (Korisnik)Session["kor"];
+                    if (Session["kor"] != null)
+                    {
+                        prijaljen = true;
+                        <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("Profil", "Korisnik")'">Moj profil</button>
+                        if (korisnik.Uloga == Uloga.vlasnik)
+                        {
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("KreirajTrenera", "Korisnik")'">Kreiraj Trenera</button>
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("MojiFitnesCentri", "Fitnes")'">Moji Fitnes Centri</button>
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("KreirajFitnesCentar", "Fitnes")'">Kreiraj Fitnes Centar</button>
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("SviTreneri", "Korisnik")'">Svi treneri</button>
+
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("SviKomentari", "Fitnes")'">Komentari</button>
+                        }
+                        else if (korisnik.Uloga == Uloga.posetilac)
+                        {
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("MojiTreninzi", "Trening")'">Moji treninzi</button>
+                        }
+                        else
+                        {
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("MojiTreninzi", "Trening")'">Moji treninzi</button>
+                            <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("KreirajTrening", "Trening")'">Kreiraj trening</button>
+
+                        }
+                    }
+
+                    else
+                    {
+                        prijaljen = false;
+                    }
+                    <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("Index", "Fitnes")'">Fitnes centri</button>
+                    if (!prijaljen)
+                    {
+                        <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("PrijaviSe", "Autentifikacija")'">Prijavi se</button>
+                        <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("RegistrujSe", "Autentifikacija")'">Registruj se</button>
+                    }
+                    else
+                    {
+                        <button style="background-color:lightblue; border-color:darkblue" type="button" onclick="location.href='@Url.Action("OdjaviSe", "Autentifikacija")'">Odjavi se</button>
+                    }
+
+                }
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <i>&copy; @DateTime.Now.Year - Nebojsa Vasic App</i>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

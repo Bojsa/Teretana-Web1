@@ -1,0 +1,50 @@
+﻿@model NebojsaVasicTeretana2022_web1.Models.Korisnik
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<p>@ViewBag.Greska</p>
+<form action="~/Autentifikacija/Registracija" >
+    <table>
+        <tr>
+            <td>Ime</td>
+            <td><input type="text" name="Ime" /></td>
+        </tr>
+        <tr>
+            <td>Prezime</td>
+            <td><input type="text" name="Prezime" /></td>
+        </tr>
+        <tr>
+            <td>Korisnicko ime</td>
+            <td><input type="text" name="KorisnickoIme" /></td>
+        </tr>
+        <tr>
+            <td>Lozinka</td>
+            <td><input type="password" name="Lozinka" /></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="Email" /></td>
+        </tr>
+        <tr>
+            <td>Datum rodjenja</td>
+            <td><input type="date" name="DatumRodjenja" /></td>
+        </tr>
+        <tr>
+            <td>Pol</td>
+            <td>
+                <input class="datalist" list="list" name="polKorisnika" />
+                <datalist id="list">
+                    <option value="zensko"></option>
+                    <option value="musko"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Registruj se" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<ArrayOfFitnesCentar xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FitnesCentar>
+    <Naziv>Ahilej</Naziv>
+    <Adresa>Brankova 13</Adresa>
+    <Godina>2013</Godina>
+    <Vlasnik>petarpetrovic</Vlasnik>
+    <Mesecna>2000</Mesecna>
+    <Godisnja>20000</Godisnja>
+    <Trening>500</Trening>
+    <GrupniTrening>400</GrupniTrening>
+    <PersonalniTrening>1200</PersonalniTrening>
+    <Deleted>false</Deleted>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Naziv>NonStop</Naziv>
+    <Adresa>Tome Hadzica 22</Adresa>
+    <Godina>2002</Godina>
+    <Vlasnik>ivanivanovic</Vlasnik>
+    <Mesecna>2000</Mesecna>
+    <Godisnja>30000</Godisnja>
+    <Trening>500</Trening>
+    <GrupniTrening>400</GrupniTrening>
+    <PersonalniTrening>2000</PersonalniTrening>
+    <Deleted>false</Deleted>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Naziv>Gold</Naziv>
+    <Adresa>Strazilovska 1</Adresa>
+    <Godina>2020</Godina>
+    <Vlasnik>markomarkovic</Vlasnik>
+    <Mesecna>2000</Mesecna>
+    <Godisnja>18000</Godisnja>
+    <Trening>500</Trening>
+    <GrupniTrening>400</GrupniTrening>
+    <PersonalniTrening>800</PersonalniTrening>
+    <Deleted>false</Deleted>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Naziv>Sparta</Naziv>
+    <Adresa>Branka Copica 22</Adresa>
+    <Godina>2015</Godina>
+    <Vlasnik>vlada</Vlasnik>
+    <Mesecna>2000</Mesecna>
+    <Godisnja>15000</Godisnja>
+    <Trening>200</Trening>
+    <GrupniTrening>100</GrupniTrening>
+    <PersonalniTrening>1000</PersonalniTrening>
+    <Deleted>false</Deleted>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Naziv>sdfg</Naziv>
+    <Adresa>dfgb</Adresa>
+    <Godina>2323</Godina>
+    <Vlasnik>vlada</Vlasnik>
+    <Mesecna>2323</Mesecna>
+    <Godisnja>2323</Godisnja>
+    <Trening>2323</Trening>
+    <GrupniTrening>2323</GrupniTrening>
+    <PersonalniTrening>3434</PersonalniTrening>
+    <Deleted>true</Deleted>
+  </FitnesCentar>
+</ArrayOfFitnesCentar>

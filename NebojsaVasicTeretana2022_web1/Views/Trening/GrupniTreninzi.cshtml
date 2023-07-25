@@ -1,0 +1,52 @@
+﻿@using NebojsaVasicTeretana2022_web1.Models
+@model List<Trening>
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<p>@ViewBag.Greska</p>
+<h4>Grupni treninzi</h4>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Datum odrzavanja</th>
+        <th>Trajanje u minutama</th>
+        <th>Tip treninga</th>
+        <th>Brojno ogranicenje</th>
+        <th>Broj prijavljenih</th>
+    </tr>
+    @{
+        Korisnik korisnik = (Korisnik)Session["kor"];
+        //List<Trening> treninzi = new List<Trening>();
+        //foreach(var t in GrupniRepository.SviTreninzi())
+        //{
+        //    if (t.FitnesCentar == Model.Naziv)
+        //    { treninzi.Add(t); }
+        //}
+    }
+    @foreach (var v in Model)
+    {
+        if (!v.Deleted)
+        {
+            <tr>
+                <td>@v.Naziv</td>
+                <td>@v.VremeOdrzavanja.ToString("dd.MM.yyyy. HH.mm")</td>
+                <td>@v.TrajanjeUMinutama</td>
+                <td>@v.Tip.ToString()</td>
+                <td>@v.BrOgranicenje</td>
+                <td>@v.Vezbaci.Count()</td>
+                @if (korisnik != null && korisnik.Uloga == Uloga.posetilac && v.VremeOdrzavanja>DateTime.Now)
+                {
+                    <td>
+                        <form action="~/Trening/PrijaviSeZaTrening">
+                            <input type="text" name="grupniTrening" value="@v.Naziv" hidden />
+                            <input type="submit" value="Prijavi se" />
+                        </form>
+                    </td>
+                }
+            </tr>
+        }
+
+
+    }
+</table>
+

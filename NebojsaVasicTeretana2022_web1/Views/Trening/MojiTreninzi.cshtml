@@ -1,0 +1,121 @@
+﻿@using NebojsaVasicTeretana2022_web1.Models
+@model List<Trening>
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<h2>Moji treninzi</h2>
+<p>@ViewBag.Greska</p>
+@{ 
+    Korisnik k = (Korisnik)Session["kor"];
+}
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Datum odrzavanja</th>
+        <th>Trajanje u minutama</th>
+        <th>Tip treninga</th>
+        <th>Brojno ogranicenje</th>
+        <th>Broj prijavljenih</th>
+    </tr>
+    @foreach (var v in Model)
+    {
+        if (!v.Deleted)
+        {
+<tr>
+    <td>@v.Naziv</td>
+    <td>@v.VremeOdrzavanja.ToString("dd.MM.yyyy. HH.mm")</td>
+    <td>@v.TrajanjeUMinutama</td>
+    <td>@v.Tip.ToString()</td>
+    <td>@v.BrOgranicenje</td>
+    <td>@v.Vezbaci.Count()</td>
+    @if (k.Uloga == Uloga.trener)
+    {
+        if (v.VremeOdrzavanja > DateTime.Now)
+        {
+            <td>
+                <form action="~/Trening/Trening">
+                    <input type="text" value="@v.Naziv" name="naziv" hidden />
+                    <input type="submit" value="Izmeni" />
+
+                </form>
+            </td>
+            if (v.Vezbaci.Count == 0)
+            {
+                <td>
+                    <form action="~/Trening/Ukloni">
+                        <input type="text" value="@v.Naziv" name="naziv" hidden />
+                        <input type="submit" value="Ukloni" />
+
+                    </form>
+                </td>
+
+            }
+        }
+        <td>
+            <form action="~/Trening/Posetioci">
+                <input type="text" value="@v.Naziv" name="trening" hidden />
+                <input type="submit" value="Posetioci" />
+
+            </form>
+        </td>
+
+    }
+</tr>
+        }
+
+
+    }
+</table>
+</br>
+<form action="~/Trening/Trazi">
+    <table>
+        <tr>
+            <td>Pretraga</td>
+        </tr>
+        <tr>
+            <td>
+                Naziv: <input type="text" name="Naziv" />
+            </td>
+        <tr>
+            <td>
+                Tip: <input type="text" name="Tipp" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fitnes centar:<input type="text" name="FitnesCentar" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Trazi" />
+            </td>
+        </tr>
+    </table>
+</form>
+<form action="~/Trening/Sort">
+    <table>
+        <tr><td>Sortiraj po:</td></tr>
+        <tr>
+            <td>
+                <input class="datalist" list="list1" name="sortirajPo" />
+                <datalist id="list1">
+                    <option value="naziv"></option>
+                    <option value="tip"></option>
+                    <option value="vreme"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr><td>Smer sortiranja:</td></tr>
+        <tr>
+            <td>
+                <input class="datalist" list="list2" name="smerSortiranja" />
+                <datalist id="list2">
+                    <option value="rastuce"></option>
+                    <option value="opadajuce"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr><td><input type="submit" value="Sort" /><br /></td></tr>
+    </table>
+</form>

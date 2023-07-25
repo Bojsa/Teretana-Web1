@@ -1,0 +1,89 @@
+﻿@model IEnumerable<NebojsaVasicTeretana2022_web1.Models.FitnesCentar>
+@{
+    ViewBag.Title = "FitnesCentri";
+}
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<h2>Fitnes Centri</h2>
+<p>@ViewBag.Greska</p>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Adresa</th>
+        <th>Godina otvaranja</th>
+        <th> </th>
+
+    </tr>
+    @foreach (var fc in Model)
+    {
+        if (!fc.Deleted)
+        {
+            <tr>
+                <td>@fc.Naziv</td>
+                <td>@fc.Adresa</td>
+                <td>@fc.Godina</td>
+                <td>
+                    <form action="~/Fitnes/CentarPoNazivu">
+                        <input type="text" name="naziv" hidden value="@fc.Naziv" />
+                        <input type="submit" value="Detalji" />
+                    </form>
+                </td>
+            </tr>
+        }
+
+    }
+</table>
+</br>
+<form action="~/Fitnes/Trazi">
+    <table>
+        <tr>
+            <td>Pretraga</td>
+        </tr>
+        <tr>
+            <td>
+                Naziv: <input type="text" name="Naziv" />
+            </td>
+        <tr>
+            <td>
+                Adresa: <input type="text" name="Adresa" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Godina otvaranja: od <input type="text" name="godina1" /> do <input type="text" name="godina2" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Trazi" />
+            </td>
+        </tr>
+    </table>
+</form>
+<form action="~/Fitnes/Sort">
+    <table>
+        <tr><td>Sortiraj po:</td></tr>
+        <tr>
+            <td>
+                <input class="datalist" list="list" name="sortirajPo" />
+                <datalist id="list">
+                    <option value="naziv"></option>
+                    <option value="adresa"></option>
+                    <option value="godina"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr><td>Smer sortiranja:</td></tr>
+        <tr>
+            <td>
+                <input class="datalist" list="list2" name="smerSortiranja" />
+                <datalist id="list2">
+                    <option value="rastuce"></option>
+                    <option value="opadajuce"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr><td><input type="submit" value="Sort" /><br /></td></tr>
+    </table>
+</form>

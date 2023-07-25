@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<ArrayOfKorisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Korisnik>
+    <KorisnickoIme>nikola</KorisnickoIme>
+    <Lozinka>nikola</Lozinka>
+    <Ime>nikola</Ime>
+    <Prezime>nikolic</Prezime>
+    <Pol>musko</Pol>
+    <Email>nikola@n.c</Email>
+    <DatumRodjenja>2022-07-26T00:00:00</DatumRodjenja>
+    <Uloga>posetilac</Uloga>
+    <Treninzi>
+      <string>trening5</string>
+    </Treninzi>
+    <RadiNa />
+    <Deleted>false</Deleted>
+    <Vlasnistvo />
+  </Korisnik>
+  <Korisnik>
+    <KorisnickoIme>milica</KorisnickoIme>
+    <Lozinka>milica</Lozinka>
+    <Ime>milica</Ime>
+    <Prezime>milica</Prezime>
+    <Pol>zensko</Pol>
+    <Email>milica@gmail.com</Email>
+    <DatumRodjenja>2022-07-11T00:00:00</DatumRodjenja>
+    <Uloga>trener</Uloga>
+    <Treninzi />
+    <RadiNa>
+      <string>trening5</string>
+      <string>trening6</string>
+    </RadiNa>
+    <Deleted>false</Deleted>
+    <Vlasnistvo />
+  </Korisnik>
+  <Korisnik>
+    <KorisnickoIme>koki</KorisnickoIme>
+    <Lozinka>koki</Lozinka>
+    <Ime>koki</Ime>
+    <Prezime>koki</Prezime>
+    <Pol>musko</Pol>
+    <Email>koki@k.c</Email>
+    <DatumRodjenja>2022-01-05T00:00:00</DatumRodjenja>
+    <Uloga>trener</Uloga>
+    <Treninzi />
+    <RadiNa />
+    <Deleted>false</Deleted>
+    <Vlasnistvo />
+  </Korisnik>
+  <Korisnik>
+    <KorisnickoIme>vlada</KorisnickoIme>
+    <Lozinka>vlada</Lozinka>
+    <Ime>vlada</Ime>
+    <Prezime>vlada</Prezime>
+    <Pol>musko</Pol>
+    <Email>vlada@gmail.com</Email>
+    <DatumRodjenja>2022-07-11T00:00:00</DatumRodjenja>
+    <Uloga>vlasnik</Uloga>
+    <Treninzi />
+    <RadiNa />
+    <Deleted>false</Deleted>
+    <Vlasnistvo>
+      <string>Ahilej</string>
+      <string>Sparta</string>
+      <string>sdfg</string>
+    </Vlasnistvo>
+  </Korisnik>
+  <Korisnik>
+    <KorisnickoIme>vasov</KorisnickoIme>
+    <Lozinka>vaso</Lozinka>
+    <Ime>vaso</Ime>
+    <Prezime>vasic</Prezime>
+    <Pol>musko</Pol>
+    <Email>vaso@gmail.com</Email>
+    <DatumRodjenja>2019-03-07T00:00:00</DatumRodjenja>
+    <Uloga>trener</Uloga>
+    <Treninzi />
+    <RadiNa>
+      <string>Gold</string>
+    </RadiNa>
+    <Deleted>false</Deleted>
+    <RadnoMesto>Sparta</RadnoMesto>
+    <Vlasnistvo />
+  </Korisnik>
+  <Korisnik>
+    <KorisnickoIme>sasa</KorisnickoIme>
+    <Lozinka>sasa</Lozinka>
+    <Ime>sasa</Ime>
+    <Prezime>sasa</Prezime>
+    <Pol>musko</Pol>
+    <Email>sasa@gmail.com</Email>
+    <DatumRodjenja>2022-08-22T00:00:00</DatumRodjenja>
+    <Uloga>trener</Uloga>
+    <Treninzi />
+    <RadiNa>
+      <string>Maksim</string>
+      <string>Prva</string>
+      <string>Kuca</string>
+      <string>Kula</string>
+    </RadiNa>
+    <Deleted>false</Deleted>
+    <RadnoMesto>Sparta</RadnoMesto>
+    <Vlasnistvo />
+  </Korisnik>
+  <Korisnik>
+    <KorisnickoIme>nebojsa</KorisnickoIme>
+    <Lozinka>nebojsa</Lozinka>
+    <Ime>nebojsa</Ime>
+    <Prezime>nebojsa</Prezime>
+    <Pol>musko</Pol>
+    <Email>nebojsa@gmail.com</Email>
+    <DatumRodjenja>2017-06-07T00:00:00</DatumRodjenja>
+    <Uloga>posetilac</Uloga>
+    <Treninzi>
+      <string>Maksim</string>
+      <string>Kuca</string>
+      <string>Kula</string>
+    </Treninzi>
+    <RadiNa />
+    <Deleted>false</Deleted>
+    <Vlasnistvo />
+  </Korisnik>
+</ArrayOfKorisnik>

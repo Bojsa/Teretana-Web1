@@ -1,0 +1,13 @@
+table, th, td {
+    border: 3px solid;
+    border-color: darkblue;
+    background-color:lightblue;
+    
+}
+
+h2 {
+    color: crimson;
+}
+p{
+    color:red;
+}

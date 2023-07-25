@@ -1,0 +1,89 @@
+﻿@using NebojsaVasicTeretana2022_web1.Models
+@model NebojsaVasicTeretana2022_web1.Models.FitnesCentar
+<head>
+    <link rel="stylesheet" href="~/stil.css">
+</head>
+<h2>@Model.Naziv</h2>
+<p>@ViewBag.Greska</p>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Godina otvaranja</th>
+        <th>Adresa</th>
+        <th>Vlasnik</th>
+        <th>Cena godisnje clanarine</th>
+        <th>Cena mesecne clanarine</th>
+        <th>Trening</th>
+        <th>Grupni trening</th>
+        <th>Personalni trening</th>
+        <th>  </th>
+    </tr>
+    <tr>
+        <td>@Model.Naziv</td>
+        <td>@Model.Adresa</td>
+        <td>@Model.Godina</td>
+        <td>@Model.Vlasnik</td>
+        <td>@Model.Mesecna din</td>
+        <td>@Model.Godisnja din</td>
+        <td>@Model.Trening din</td>
+        <td>@Model.GrupniTrening din</td>
+        <td>@Model.PersonalniTrening din</td>
+        <td>
+            <form action="~/Trening/GrupniTreninzi">
+                <input type="text" name="centar" hidden value="@Model.Naziv" />
+                <input type="submit" value="Grupni treninzi" />
+            </form>
+        </td>
+    </tr>
+</table>
+@{
+    Korisnik k = (Korisnik)Session["kor"];
+    List<Trening> t = GrupniRepository.SviTreninzi();
+    foreach (Trening tr in t)
+    {
+        if (tr.FitnesCentar == Model.Naziv && k != null && k.Treninzi.Contains(tr.Naziv) && tr.VremeOdrzavanja < DateTime.Now)
+        {
+            <form action="~/Fitnes/OstaviKomentar">
+                <table>
+                    <tr><td colspan="2">Ostavi komentar</td></tr>
+                    <tr>
+                        <td>Ocena</td>
+                        <td><input type="number" name="Ocena" /></td>
+                    </tr>
+                    <tr>
+                        <td>Komentar</td>
+                        <td><input type="text" name="Tekst" /></td>
+                    </tr>
+                    <tr><td colspan="2"><input type="submit" value="Posalji" /></td></tr>
+                </table>
+                <input type="text" name="FitnesCentar" value="@Model.Naziv" />
+            </form>
+            break;
+        }
+    }
+    List<Komentar> komentari = KomentarRepository.SviKomentari();
+<table>
+    <tr>
+        <td colspan="3">Komentari</td>
+    </tr>
+    <tr>
+        <th>Ocena</th>
+        <th>Komentar</th>
+        <th>Korisnik</th>
+    </tr>
+    @foreach(var kom in komentari)
+    {
+        if(kom.FitnesCentar==Model.Naziv && kom.Obradjen && kom.Odobren)
+        {
+            <tr>
+                <td>@kom.Ocena</td>
+                <td>@kom.Tekst</td>
+                <td>@kom.Vezbac</td>
+            </tr>
+        }
+    }
+</table>
+    
+
+}
+
