@@ -1,7 +1,3 @@
-Evo profesionalno sređene verzije sadržaja za `README.md` na GitHubu:
-
----
-
 # 🏋️‍♂️ Fitness Center Management Web App
 
 Web aplikacija za vođenje evidencije fitnes centara, izrađena kao projekat za kurs *Primenjeno softversko inženjerstvo (2021/2022)*.
