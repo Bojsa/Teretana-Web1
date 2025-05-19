@@ -126,5 +126,3 @@ Dodaj slike aplikacije u `screenshots/` folder i ubaci ih ovde, npr:
 ```
 
 ---
-
-Ako želiš, mogu ti odmah napraviti `.md` fajl koji samo ubaciš u repozitorijum — javi samo.
